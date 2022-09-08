@@ -1,5 +1,4 @@
 package org.example;
-import org.jetbrains.annotations.NotNull;
 
 public class Rational {
     private final int numerator;
@@ -23,7 +22,12 @@ public class Rational {
         return denominator;
     }
 
-    public Rational add(@NotNull Rational other) {
+    public Rational add(Rational other) {
+        // Checking that other is not null
+        if (other == null) {
+            throw new IllegalArgumentException("The other rational cannot be null.");
+        }
+
         // Checking that denominators are equal
         if( this.denominator == other.getDenominator()) {
             return new Rational(this.numerator + other.getNumerator(), this.denominator);

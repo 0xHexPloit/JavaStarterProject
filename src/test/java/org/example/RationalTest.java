@@ -55,6 +55,13 @@ class RationalTest {
     }
 
     @Test
+    @DisplayName("test that the add method throws an exception when the other rational is null")
+    void testAddNull() {
+        Rational rational1 = new Rational(1, 2);
+        assertThrows(IllegalArgumentException.class, () -> rational1.add(null));
+    }
+
+    @Test
     @DisplayName("test that simplify returns the same rational when the rational is already simplified")
     void testSimplifyAlreadySimplified() {
         Rational rational = new Rational(1, 2);
