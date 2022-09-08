@@ -1,5 +1,6 @@
 name: Build starters using JUnit
 on:
+  push:
   pull_request:
 jobs:
   linux:
